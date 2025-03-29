@@ -1,100 +1,87 @@
-# -json-maze.json
-此脚本是适用于项目x-glacier GenerativeAgentsCN，可以将自义定地图转成ai能理解的maze文件
+# Tiled地图转Maze工具
 
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
-# TiledToMaze (Tiled地图转Maze工具)
+这是一个简单的工具，可以把Tiled地图编辑器做的地图转换成游戏可以使用的Maze格式和空间树结构。
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+## 这个工具能做什么？
 
-一个简单高效的工具，将Tiled编辑器导出的JSON地图文件转换为Maze格式和空间树结构。支持多线程处理和实时进度显示，适用于游戏开发中的地图处理。
+- 把Tiled编辑器导出的地图文件(.json)转换成游戏能用的格式
+- 一键生成两种文件：Maze格式和空间树结构
+- 转换大地图时不会卡顿
+- 有进度条显示，让你知道转换到哪一步了
+- 简单易用的界面，点几下鼠标就能完成
 
-## 功能特点
+## 怎么安装和使用
 
-- ✅ 支持从Tiled导出的JSON地图文件转换
-- ✅ 一键生成标准Maze格式文件
-- ✅ 自动构建空间树结构
-- ✅ 多线程处理大型地图文件
-- ✅ 实时进度条显示转换状态
-- ✅ 用户友好的GUI界面
-
-## 安装说明
-
-### 环境要求
-- Python 3.6+
-- tkinter (通常随Python安装)
+### 需要先安装的东西
+- Python 3.6或更新版本 (如果没有，去[Python官网](https://www.python.org/downloads/)下载)
+- tkinter (一般Python安装时就自带了)
 
 ### 安装步骤
 
-1. 克隆仓库到本地
+1. 下载或克隆这个项目到你的电脑
 ```bash
 git clone https://github.com/你的用户名/TiledToMaze.git
 cd TiledToMaze
 ```
 
-2. 运行程序
+2. 直接运行程序
 ```bash
 python json地图转换maze脚本3y9r.py
 ```
 
-## 使用方法
+### 使用方法（超简单）
 
-1. 启动程序
-2. 点击"选择文件"按钮，选择Tiled导出的JSON地图文件
-3. 选择输出目录
-4. 设置Maze文件和空间树文件的名称
-5. 点击"一键转换"按钮开始转换
-6. 查看日志区域获取转换进度和结果
+1. 打开程序
+2. 点"选择文件"按钮，找到你的Tiled地图文件(.json)
+3. 选择你想保存结果的文件夹
+4. 如果需要，可以修改输出文件的名字
+5. 点"一键转换"按钮
+6. 等待完成即可！转换过程会在下方显示
 
-## 支持的图层格式
+## 支持什么样的地图？
 
-工具支持两种命名格式的图层：
+工具支持两种命名方式的图层：
 
-1. 传统格式:
-   - `sector-xxx`: 扇区层
-   - `arena-xxx`: 区域层
-   - `object-xxx`: 物体层
+1. 常规命名:
+   - `sector-xxx`: 表示区域
+   - `arena-xxx`: 表示场景
+   - `object-xxx`: 表示物体
 
-2. 数字前缀格式:
-   - `1xxx`: 对应扇区层
-   - `2xxx`: 对应区域层
-   - `3xxx`: 对应物体层
-
-## 项目结构
-
-- `convert_tiled_to_maze()`: 将Tiled JSON地图转换为Maze格式
-- `convert_maze_to_tree()`: 将Maze数据转换为空间树结构
-- `build_location_hierarchy()`: 构建地点层级关系
-- `TiledToSpatialTreeConverter`: GUI界面类
+2. 数字开头命名:
+   - `1xxx`: 表示区域
+   - `2xxx`: 表示场景
+   - `3xxx`: 表示物体
 
 ## 常见问题
 
-**Q: 如何调整碰撞图层设置?**  
-A: 在代码中修改 `collision_tiles` 数组的值。
+**问: 我的地图太大，会不会卡住?**  
+答: 不会。程序使用了先进的多线程技术，转换再大的地图界面也不会卡住。
 
-**Q: 转换大型地图时会不会卡顿?**  
-A: 程序使用了多线程处理，将耗时操作放在后台执行，界面不会卡顿。
+**问: 我不太懂编程，能用这个工具吗?**  
+答: 完全可以！这个工具设计得非常简单，只需点击几个按钮就能完成转换。
 
-**Q: 支持哪些Tiled地图格式?**  
-A: 目前支持Tiled导出的JSON格式地图文件。
+**问: 转换完的文件放在哪里?**  
+答: 在你选择的输出目录中，会生成两个文件：Maze文件和空间树文件。
 
-## 贡献指南
+## 协议说明
 
-欢迎提交问题和改进建议！如需贡献代码，请遵循以下步骤：
+本项目采用 Apache 2.0 许可证。这意味着你可以:
 
-1. Fork 本仓库
-2. 创建您的特性分支 (`git checkout -b feature/AmazingFeature`)
-3. 提交您的更改 (`git commit -m 'Add some AmazingFeature'`)
-4. 推送到分支 (`git push origin feature/AmazingFeature`)
-5. 开启一个 Pull Request
+- 自由使用、修改和分享这个工具
+- 用于商业项目
+- 按你的需要修改源代码
 
-## 许可证
+唯一的要求是保留原始版权声明和许可证信息。
 
-本项目采用 MIT 许可证 - 详情请查看 [LICENSE](LICENSE) 文件
+## 需要帮助？
 
-## 联系方式
+如果你有任何问题或建议，可以通过以下方式联系我们：
 
-如有任何问题或建议，请通过 GitHub Issues 联系我们。
+- 在GitHub上提交Issue
+- 发邮件到: [你的邮箱]
 
 ---
 
-希望这个工具能帮助您简化游戏开发中的地图处理工作！
+希望这个小工具能帮你节省时间！
