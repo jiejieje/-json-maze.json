@@ -18,18 +18,35 @@
 - Python 3.6或更新版本 (如果没有，去[Python官网](https://www.python.org/downloads/)下载)
 - tkinter (一般Python安装时就自带了)
 
-### 安装步骤
+### 下载方式
 
-1. 下载或克隆这个项目到你的电脑
-```bash
-git clone https://github.com/你的用户名/TiledToMaze.git
-cd TiledToMaze
-```
+有多种方式可以获取这个工具：
 
-2. 直接运行程序
-```bash
-python json地图转换maze脚本3y9r.py
-```
+1. **直接下载ZIP压缩包**
+   - 在GitHub页面上点击绿色的"Code"按钮
+   - 选择"Download ZIP"
+   - 下载完成后解压到任意文件夹
+
+2. **使用Git克隆**（适合懂技术的用户）
+   ```bash
+   git clone https://github.com/你的用户名/TiledToMaze.git
+   cd TiledToMaze
+   ```
+
+3. **从发布页面下载**
+   - 访问项目的"Releases"页面
+   - 下载最新版本的程序包
+
+### 运行程序
+
+下载后，你可以这样运行：
+
+1. 双击`json地图转换maze脚本3y9r.py`文件（如果你的系统已将.py文件关联到Python）
+
+2. 或者打开命令提示符/终端，进入程序所在文件夹，然后运行：
+   ```bash
+   python json地图转换maze脚本3y9r.py
+   ```
 
 ### 使用方法（超简单）
 
